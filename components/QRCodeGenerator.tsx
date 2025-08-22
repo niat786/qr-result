@@ -110,7 +110,6 @@ export default function QRCodeGenerator() {
                 data={qrData}
                 customization={customization}
               />
-
               <DownloadPanel
                 canvasRef={qrCanvasRef}
                 customization={customization}
