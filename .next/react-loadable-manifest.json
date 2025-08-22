@@ -1,0 +1,14 @@
+{
+  "components/DownloadPanel.tsx -> qrcode": {
+    "id": "components/DownloadPanel.tsx -> qrcode",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_qrcode_lib_browser_js.js"
+    ]
+  },
+  "components/QRCodeCanvas.tsx -> qrcode": {
+    "id": "components/QRCodeCanvas.tsx -> qrcode",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_qrcode_lib_browser_js.js"
+    ]
+  }
+}
