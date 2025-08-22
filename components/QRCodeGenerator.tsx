@@ -34,9 +34,7 @@ export default function QRCodeGenerator() {
     logoSize: 60,
   });
 
-  // const qrCanvasRef = useRef<HTMLCanvasElement>(null);
-  const qrCanvasRef = useRef<HTMLCanvasElement | null>(null);
-
+  const qrCanvasRef = useRef<HTMLCanvasElement>(null);
   const handleTypeChange = useCallback((type: QRType) => {
     setActiveType(type);
     setQrData('');

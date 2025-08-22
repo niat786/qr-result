@@ -4,7 +4,7 @@ import { useState, RefObject } from 'react';
 import { QRCustomization } from './QRCodeGenerator';
 
 interface DownloadPanelProps {
-  canvasRef: RefObject<HTMLCanvasElement>;
+  canvasRef: RefObject<HTMLCanvasElement | null>; 
   customization: QRCustomization;
   data: string;
 }
