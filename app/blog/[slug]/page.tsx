@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import type { Metadata } from 'next/metadata';
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
   return [
@@ -238,9 +238,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       <Header />
       
       {/* Breadcrumb */}
-      <section className="pt-20 pb-8 px-4">
+      <section className="px-4 pt-20 pb-8">
         <div className="max-w-4xl mx-auto">
-          <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-8">
+          <nav className="flex items-center mb-8 space-x-2 text-sm text-gray-600">
             <Link href="/" className="hover:text-blue-600">Home</Link>
             <i className="ri-arrow-right-s-line"></i>
             <Link href="/blog" className="hover:text-blue-600">Blog</Link>
@@ -251,38 +251,38 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Article Header */}
-      <article className="pb-16 px-4">
+      <article className="px-4 pb-16">
         <div className="max-w-4xl mx-auto">
           {/* Category and Reading Time */}
           <div className="flex items-center gap-4 mb-6">
-            <span className="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-full">
+            <span className="px-3 py-1 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-600 to-purple-600">
               {post.category}
             </span>
-            <span className="text-gray-600 text-sm">{post.readTime}</span>
+            <span className="text-sm text-gray-600">{post.readTime}</span>
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="mb-6 text-4xl font-bold leading-tight text-gray-900 md:text-5xl">
             {post.title}
           </h1>
 
           {/* Author and Date */}
-          <div className="flex items-center gap-4 mb-8 pb-8 border-b border-gray-200">
-            <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-              <i className="ri-user-fill text-white text-xl"></i>
+          <div className="flex items-center gap-4 pb-8 mb-8 border-b border-gray-200">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-purple-600">
+              <i className="text-xl text-white ri-user-fill"></i>
             </div>
             <div>
               <p className="font-semibold text-gray-900">{post.author}</p>
-              <p className="text-gray-600 text-sm">{post.date}</p>
+              <p className="text-sm text-gray-600">{post.date}</p>
             </div>
           </div>
 
           {/* Featured Image */}
-          <div className="mb-12 rounded-2xl overflow-hidden shadow-lg">
+          <div className="mb-12 overflow-hidden shadow-lg rounded-2xl">
             <img 
               src={post.image} 
               alt={post.title}
-              className="w-full h-64 md:h-96 object-cover object-top"
+              className="object-cover object-top w-full h-64 md:h-96"
             />
           </div>
 
@@ -295,13 +295,13 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </div>
 
           {/* Tags */}
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Tags</h3>
+          <div className="pt-8 mt-12 border-t border-gray-200">
+            <h3 className="mb-4 text-lg font-semibold text-gray-900">Tags</h3>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span 
                   key={tag}
-                  className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-blue-100 hover:text-blue-700 transition-colors cursor-pointer"
+                  className="px-3 py-1 text-sm text-gray-700 transition-colors bg-gray-100 rounded-full cursor-pointer hover:bg-blue-100 hover:text-blue-700"
                 >
                   {tag}
                 </span>
@@ -310,22 +310,22 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </div>
 
           {/* Social Share */}
-          <div className="mt-8 pt-8 border-t border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Share this article</h3>
+          <div className="pt-8 mt-8 border-t border-gray-200">
+            <h3 className="mb-4 text-lg font-semibold text-gray-900">Share this article</h3>
             <div className="flex gap-4">
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              <button className="flex items-center gap-2 px-4 py-2 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700">
                 <i className="ri-twitter-fill"></i>
                 Twitter
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors">
+              <button className="flex items-center gap-2 px-4 py-2 text-white transition-colors bg-blue-800 rounded-lg hover:bg-blue-900">
                 <i className="ri-facebook-fill"></i>
                 Facebook
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors">
+              <button className="flex items-center gap-2 px-4 py-2 text-white transition-colors bg-blue-700 rounded-lg hover:bg-blue-800">
                 <i className="ri-linkedin-fill"></i>
                 LinkedIn
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+              <button className="flex items-center gap-2 px-4 py-2 text-white transition-colors bg-gray-600 rounded-lg hover:bg-gray-700">
                 <i className="ri-link"></i>
                 Copy Link
               </button>
@@ -335,26 +335,26 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       </article>
 
       {/* Related Posts */}
-      <section className="py-16 px-4 bg-white/50">
+      <section className="px-4 py-16 bg-white/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Articles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <h2 className="mb-8 text-3xl font-bold text-center text-gray-900">Related Articles</h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {relatedPosts.map((relatedPost) => (
               <Link 
                 key={relatedPost.slug}
                 href={`/blog/${relatedPost.slug}`}
                 className="group"
               >
-                <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                <article className="overflow-hidden transition-all duration-300 transform bg-white shadow-lg rounded-xl hover:shadow-xl hover:scale-105">
                   <div className="h-48 overflow-hidden">
                     <img 
                       src={relatedPost.image} 
                       alt={relatedPost.title}
-                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300"
+                      className="object-cover object-top w-full h-full transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-600">
                       {relatedPost.title}
                     </h3>
                   </div>
@@ -366,19 +366,19 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="px-4 py-16 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Never Miss an Update</h2>
-          <p className="text-xl mb-8 opacity-90">
+          <h2 className="mb-4 text-3xl font-bold">Never Miss an Update</h2>
+          <p className="mb-8 text-xl opacity-90">
             Subscribe to get the latest QR code marketing insights delivered to your inbox
           </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <form className="flex flex-col max-w-md gap-4 mx-auto sm:flex-row">
             <input 
               type="email" 
               placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
+              className="flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
             />
-            <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200 whitespace-nowrap">
+            <button className="px-6 py-3 font-semibold text-blue-600 transition-all duration-200 transform bg-white rounded-lg hover:shadow-lg hover:scale-105 whitespace-nowrap">
               Subscribe Now
             </button>
           </form>
