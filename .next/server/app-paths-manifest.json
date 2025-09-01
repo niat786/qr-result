@@ -1,9 +1,12 @@
 {
-  "/page": "app/page.js",
-  "/dynamic-qr/page": "app/dynamic-qr/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/blog/page": "app/blog/page.js",
   "/about/page": "app/about/page.js",
   "/contact/page": "app/contact/page.js",
-  "/pricing/page": "app/pricing/page.js"
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dynamic-qr/page": "app/dynamic-qr/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/landing-demo/page": "app/landing-demo/page.js",
+  "/page": "app/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js"
 }

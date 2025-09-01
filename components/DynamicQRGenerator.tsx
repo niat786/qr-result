@@ -104,7 +104,7 @@ export default function DynamicQRGenerator() {
   // Generate dynamic URL when name changes
   useEffect(() => {
     if (qrData.name) {
-      const urlId = qrData.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').trim('-');
+      const urlId = qrData.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
       setGeneratedUrl(`https://qr.example.com/${urlId}`);
       setQrData(prev => ({ ...prev, id: urlId }));
     }
@@ -159,7 +159,7 @@ export default function DynamicQRGenerator() {
         
         // Show success message
         const successMsg = document.createElement('div');
-        successMsg.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+        successMsg.className = 'fixed z-50 px-6 py-3 text-white bg-green-500 rounded-lg shadow-lg top-4 right-4';
         successMsg.textContent = 'Dynamic QR Code saved successfully!';
         document.body.appendChild(successMsg);
         setTimeout(() => document.body.removeChild(successMsg), 3000);
@@ -195,7 +195,7 @@ export default function DynamicQRGenerator() {
         
         // Show success message
         const successMsg = document.createElement('div');
-        successMsg.className = 'fixed top-4 right-4 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+        successMsg.className = 'fixed z-50 px-6 py-3 text-white bg-blue-500 rounded-lg shadow-lg top-4 right-4';
         successMsg.textContent = 'QR Code updated successfully!';
         document.body.appendChild(successMsg);
         setTimeout(() => document.body.removeChild(successMsg), 3000);
@@ -338,38 +338,38 @@ export default function DynamicQRGenerator() {
   const labelClass = "block text-sm font-medium text-gray-700 mb-2";
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
       {/* Configuration Panel */}
-      <div className="lg:col-span-2 space-y-6">
+      <div className="space-y-6 lg:col-span-2">
         {/* Saved QR Codes */}
         {savedQRs.length > 0 && (
-          <div className="bg-white rounded-2xl shadow-xl p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Saved Dynamic QR Codes</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-48 overflow-y-auto">
+          <div className="p-6 bg-white shadow-xl rounded-2xl">
+            <h3 className="mb-4 text-xl font-bold text-gray-900">Saved Dynamic QR Codes</h3>
+            <div className="grid grid-cols-1 gap-4 overflow-y-auto md:grid-cols-2 max-h-48">
               {savedQRs.map((qr) => (
-                <div key={qr.id} className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <div key={qr.id} className="p-4 transition-shadow border border-gray-200 rounded-lg hover:shadow-md">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <h4 className="font-medium text-gray-900">{qr.name}</h4>
                       <p className="text-sm text-gray-500">{qr.type}</p>
-                      <p className="text-xs text-gray-400 mt-1">
+                      <p className="mt-1 text-xs text-gray-400">
                         {qr.scanCount || 0} scans • {qr.destinations.length} rules
                       </p>
                     </div>
                     <div className="flex space-x-1">
                       <button
                         onClick={() => loadQRCode(qr)}
-                        className="p-1 text-blue-600 hover:bg-blue-50 rounded cursor-pointer"
+                        className="p-1 text-blue-600 rounded cursor-pointer hover:bg-blue-50"
                         title="Load QR"
                       >
-                        <i className="ri-edit-line text-sm"></i>
+                        <i className="text-sm ri-edit-line"></i>
                       </button>
                       <button
                         onClick={() => deleteQRCode(qr.id)}
-                        className="p-1 text-red-600 hover:bg-red-50 rounded cursor-pointer"
+                        className="p-1 text-red-600 rounded cursor-pointer hover:bg-red-50"
                         title="Delete QR"
                       >
-                        <i className="ri-delete-bin-line text-sm"></i>
+                        <i className="text-sm ri-delete-bin-line"></i>
                       </button>
                     </div>
                   </div>
@@ -379,19 +379,19 @@ export default function DynamicQRGenerator() {
           </div>
         )}
 
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="p-8 bg-white shadow-xl rounded-2xl">
           {/* Basic Settings */}
           <div className="mb-8">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-bold text-gray-900">Dynamic QR Configuration</h3>
               {qrData.id && (
-                <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">
+                <span className="px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full">
                   Saved • ID: {qrData.id}
                 </span>
               )}
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2">
               <div>
                 <label className={labelClass}>QR Code Name *</label>
                 <input
@@ -402,7 +402,7 @@ export default function DynamicQRGenerator() {
                   className={commonInputClass}
                   required
                 />
-                <p className="text-xs text-gray-500 mt-1">This creates your dynamic URL</p>
+                <p className="mt-1 text-xs text-gray-500">This creates your dynamic URL</p>
               </div>
               
               <div>
@@ -421,21 +421,21 @@ export default function DynamicQRGenerator() {
 
             {/* Generated URL Display */}
             {generatedUrl && (
-              <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <label className="block text-sm font-medium text-blue-800 mb-2">Generated Dynamic URL</label>
+              <div className="p-4 mb-6 border border-blue-200 rounded-lg bg-blue-50">
+                <label className="block mb-2 text-sm font-medium text-blue-800">Generated Dynamic URL</label>
                 <div className="flex items-center space-x-2">
-                  <code className="flex-1 p-2 bg-white rounded border text-sm text-gray-800 font-mono">
+                  <code className="flex-1 p-2 font-mono text-sm text-gray-800 bg-white border rounded">
                     {generatedUrl}
                   </code>
                   <button
                     onClick={() => navigator.clipboard.writeText(generatedUrl)}
-                    className="p-2 text-blue-600 hover:bg-blue-100 rounded cursor-pointer"
+                    className="p-2 text-blue-600 rounded cursor-pointer hover:bg-blue-100"
                     title="Copy URL"
                   >
                     <i className="ri-clipboard-line"></i>
                   </button>
                 </div>
-                <p className="text-xs text-blue-600 mt-1">This URL will redirect based on your conditions below</p>
+                <p className="mt-1 text-xs text-blue-600">This URL will redirect based on your conditions below</p>
               </div>
             )}
           </div>
@@ -446,15 +446,15 @@ export default function DynamicQRGenerator() {
               <h4 className="text-lg font-semibold text-gray-900">Destination Rules</h4>
               <button
                 onClick={addDestination}
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm whitespace-nowrap"
+                className="px-4 py-2 text-sm text-white transition-colors bg-green-600 rounded-lg hover:bg-green-700 whitespace-nowrap"
               >
-                <i className="ri-add-line mr-1"></i>
+                <i className="mr-1 ri-add-line"></i>
                 Add Rule
               </button>
             </div>
 
             {/* Destination Tabs */}
-            <div className="flex space-x-2 mb-6 overflow-x-auto">
+            <div className="flex mb-6 space-x-2 overflow-x-auto">
               {qrData.destinations.map((dest, index) => (
                 <button
                   key={dest.id}
@@ -474,7 +474,7 @@ export default function DynamicQRGenerator() {
                       }}
                       className="ml-2 text-red-400 hover:text-red-600"
                     >
-                      <i className="ri-close-line text-xs"></i>
+                      <i className="text-xs ri-close-line"></i>
                     </button>
                   )}
                 </button>
@@ -483,7 +483,7 @@ export default function DynamicQRGenerator() {
 
             {/* Active Destination Configuration */}
             {qrData.destinations[activeDestination] && (
-              <div className="space-y-6 p-6 bg-gray-50 rounded-lg">
+              <div className="p-6 space-y-6 rounded-lg bg-gray-50">
                 {/* Destination URL */}
                 <div>
                   <label className={labelClass}>Destination URL *</label>
@@ -499,7 +499,7 @@ export default function DynamicQRGenerator() {
 
                 {/* Conditions */}
                 <div>
-                  <h5 className="font-medium text-gray-900 mb-4">Conditions (Leave empty for always active)</h5>
+                  <h5 className="mb-4 font-medium text-gray-900">Conditions (Leave empty for always active)</h5>
                   
                   {/* Time Range */}
                   <div className="grid grid-cols-2 gap-4 mb-4">
@@ -564,7 +564,7 @@ export default function DynamicQRGenerator() {
                   {/* Device Targeting */}
                   <div className="mb-4">
                     <label className={labelClass}>Target Devices</label>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                    <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
                       {deviceTypes.map(device => (
                         <button
                           key={device.id}
@@ -628,7 +628,7 @@ export default function DynamicQRGenerator() {
 
           {/* Advanced Settings */}
           <div className="mb-8">
-            <h4 className="text-lg font-semibold text-gray-900 mb-4">Advanced Settings</h4>
+            <h4 className="mb-4 text-lg font-semibold text-gray-900">Advanced Settings</h4>
             
             <div className="space-y-4">
               {/* Password Protection */}
@@ -717,9 +717,9 @@ export default function DynamicQRGenerator() {
             <button
               onClick={handleGenerateQR}
               disabled={!qrData.name || !qrData.destinations[0]?.url}
-              className="flex-1 px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none whitespace-nowrap"
+              className="flex-1 px-6 py-4 font-semibold text-white transition-all duration-200 transform bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none whitespace-nowrap"
             >
-              <i className="ri-qr-code-fill mr-2"></i>
+              <i className="mr-2 ri-qr-code-fill"></i>
               Preview QR Code
             </button>
             
@@ -727,16 +727,16 @@ export default function DynamicQRGenerator() {
               <button
                 onClick={qrData.id ? updateQRCode : saveQRCode}
                 disabled={isSaving}
-                className="flex-1 px-6 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none whitespace-nowrap"
+                className="flex-1 px-6 py-4 font-semibold text-white transition-all duration-200 transform bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none whitespace-nowrap"
               >
                 {isSaving ? (
                   <>
-                    <i className="ri-loader-4-line mr-2 animate-spin"></i>
+                    <i className="mr-2 ri-loader-4-line animate-spin"></i>
                     {qrData.id ? 'Updating...' : 'Saving...'}
                   </>
                 ) : (
                   <>
-                    <i className="ri-save-line mr-2"></i>
+                    <i className="mr-2 ri-save-line"></i>
                     {qrData.id ? 'Update QR Code' : 'Save QR Code'}
                   </>
                 )}
