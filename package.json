@@ -1,0 +1,47 @@
+{
+  "name": "qr-result-new",
+  "version": "1.0.0",
+  "description": "Modern QR Code maker online",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/niat786/qr-result-new.git"
+  },
+  "keywords": [
+    "QR",
+    "Code",
+    "Generator"
+  ],
+  "author": "niat786",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niat786/qr-result-new/issues"
+  },
+  "homepage": "https://github.com/niat786/qr-result-new#readme",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.562.0",
+    "next": "^16.1.3",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "@types/qrcode.react": "^1.0.5",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.3"
+  }
+}
