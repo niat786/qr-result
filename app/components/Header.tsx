@@ -54,8 +54,8 @@ export function Header({
                             {icon}
                         </div>
                     ) : (
-                        <Link href="/" className={`w-9 h-9 rounded-xl bg-gradient-to-br ${iconGradient} flex items-center justify-center font-bold text-white text-lg shadow-sm shrink-0 hover:scale-105 transition-transform`}>
-                            Q
+                        <Link href="/" className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 overflow-hidden hover:opacity-90 transition-opacity" aria-label="QRResult home">
+                            <img src="/qr-result-site-logo.webp" alt="" className="w-full h-full object-contain" width={36} height={36} />
                         </Link>
                     )}
 
@@ -84,6 +84,7 @@ export function Header({
                     >
                         Generator
                     </Link>
+                    {/* Dynamic – commented for now
                     <Link
                         href="/dynamic"
                         className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
@@ -94,6 +95,7 @@ export function Header({
                     >
                         Dynamic
                     </Link>
+                    */}
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -144,6 +146,7 @@ export function Header({
                                             <Home size={18} />
                                             Static Generator
                                         </Link>
+                                        {/* Dynamic – commented for now
                                         <Link
                                             href="/dynamic"
                                             onClick={closeMenu}
@@ -156,6 +159,7 @@ export function Header({
                                             <Sparkles size={18} />
                                             Dynamic Manager
                                         </Link>
+                                        */}
                                     </div>
                                 </div>
 

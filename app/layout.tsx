@@ -5,32 +5,19 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://www.qrresult.com'),
     title: {
         template: '%s | QRResult',
-        default: 'QRResult - Free QR Code Generator & Dynamic Link Manager',
+        default: 'Free QR Code Generator | Create Custom QR Codes at QRResult',
     },
-    description: 'Create beautiful, customizable QR codes instantly. Free QR code generator with 100+ types including WiFi, vCard, URLs, crypto, social media, and more. Dynamic links with analytics. No sign-up required.',
+    description: 'Generate high-quality, custom QR codes for free. Support for URLs, Wi-Fi, vCards, Text, and more. No registration required. Fast, easy, and secure.',
     applicationName: 'QRResult',
-    authors: [{ name: 'QR Studio Team', url: 'https://github.com/niat786' }],
+    authors: [{ name: 'QR Result Team', url: 'https://github.com/niat786' }],
     keywords: [
         'QR code generator',
         'free QR code',
+        'create QR code',
+        'QRResult',
         'custom QR code',
-        'dynamic QR code',
-        'QR code maker',
-        'QR code creator',
         'WiFi QR code',
-        'vCard QR code',
-        'QR code analytics',
-        'QR code with logo',
-        'business QR code',
-        'marketing QR code',
-        'social media QR code',
-        'crypto QR code',
-        'payment QR code',
-        'QR code scanner',
-        'QR code designer',
-        'professional QR code',
-        'QR code generator online',
-        'create QR code free'
+        'vCard generator',
     ],
     creator: 'QRResult',
     publisher: 'QRResult',
@@ -53,13 +40,13 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://www.qrresult.com',
+        url: 'https://www.qrresult.com/',
         siteName: 'QRResult',
-        title: 'QRResult - Free QR Code Generator & Dynamic Link Manager',
-        description: 'Create beautiful, customizable QR codes instantly. 100+ QR code types including WiFi, vCard, URLs, crypto, social media, and more. Dynamic links with analytics.',
+        title: 'QRResult - The Easiest Way to Generate QR Codes',
+        description: 'Create custom QR codes instantly for URLs, text, and business cards. Free, fast, and high-resolution downloads.',
         images: [
             {
-                url: '/og-image.png',
+                url: '/qrresult.webp',
                 width: 1200,
                 height: 630,
                 alt: 'QRResult - QR Code Generator',
@@ -69,16 +56,17 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'QRResult - Free QR Code Generator',
-        description: 'Create beautiful, customizable QR codes instantly. 100+ types. Dynamic links with analytics.',
+        description: 'Generate custom QR codes for your business or personal use in seconds. Free high-res SVG and PNG downloads.',
         creator: '@qrresult',
-        images: ['/og-image.png'],
+        images: ['/qrresult.webp'],
     },
     alternates: {
-        canonical: 'https://www.qrresult.com',
+        canonical: 'https://www.qrresult.com/',
     },
     category: 'Utilities',
     classification: 'QR Code Generator',
     other: {
+        language: 'English',
         'apple-mobile-web-app-capable': 'yes',
         'apple-mobile-web-app-status-bar-style': 'default',
         'apple-mobile-web-app-title': 'QRResult',
@@ -103,7 +91,7 @@ const organizationSchema = {
     '@type': 'Organization',
     name: 'QRResult',
     url: 'https://www.qrresult.com',
-    logo: 'https://www.qrresult.com/logo.png',
+    logo: 'https://www.qrresult.com/qr-result-site-logo.webp',
     description: 'Professional QR Code Generator and Dynamic Link Manager',
     sameAs: [
         'https://github.com/niat786/qr-result-new',
@@ -182,6 +170,23 @@ const breadcrumbSchema = {
     ],
 }
 
+const webApplicationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'QRResult QR Code Generator',
+    url: 'https://www.qrresult.com/',
+    description: 'A free online tool to generate custom QR codes for URLs, WiFi, vCards, and more.',
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'All',
+    offers: {
+        '@type': 'Offer',
+        price: '0.00',
+        priceCurrency: 'USD',
+    },
+    featureList: 'URL to QR, WiFi QR, vCard QR, Custom Colors, Logo Support, High-Res Downloads',
+    browserRequirements: 'Requires a modern web browser.',
+}
+
 export default function RootLayout({
     children,
 }: {
@@ -190,8 +195,8 @@ export default function RootLayout({
     return (
         <html lang="en" itemScope itemType="https://schema.org/WebApplication">
             <head>
-                <link rel="icon" href="/favicon.ico" sizes="any" />
-                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+                <link rel="icon" href="/qr-result-site-logo.webp" type="image/webp" sizes="any" />
+                <link rel="apple-touch-icon" href="/qr-result-site-logo.webp" />
                 <link rel="manifest" href="/manifest.json" />
                 <meta name="google-site-verification" content="" />
                 <meta name="msvalidate.01" content="" />
@@ -210,6 +215,10 @@ export default function RootLayout({
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema) }}
                 />
             </head>
             <body suppressHydrationWarning itemScope itemType="https://schema.org/WebPage">

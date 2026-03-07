@@ -15,9 +15,9 @@ export default function manifest(): MetadataRoute.Manifest {
         dir: 'ltr',
         icons: [
             {
-                src: '/favicon.ico',
+                src: '/qr-result-site-logo.webp',
                 sizes: 'any',
-                type: 'image/x-icon',
+                type: 'image/webp',
             },
             {
                 src: '/icon-192.png',

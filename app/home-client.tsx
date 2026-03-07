@@ -91,7 +91,7 @@ function HomeContent() {
         <div className="flex flex-col h-screen">
             {/* Header with Mobile Sidebar */}
             <Header
-                title="QR Studio"
+                title="QR Result"
                 badge="Pro"
                 mobileMenu={(close) => (
                     <Sidebar
@@ -536,6 +536,29 @@ function HomeContent() {
                             </div>
                         </aside>
                     </div>
+
+                    {/* Sample article section – content can be updated later */}
+                    <article className="max-w-6xl mx-auto py-16 border-t border-black/5">
+                        <div className="card-glossy p-8 md:p-10">
+                            <header className="mb-8 relative z-10">
+                                <h2 className="text-2xl font-bold text-[#1D1D1F] mb-2">
+                                    Why Use a Free QR Code Generator?
+                                </h2>
+                                <p className="text-[#86868B] text-sm">
+                                    Quick tips and ideas for using QR codes in your projects.
+                                </p>
+                            </header>
+                            <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4 relative z-10">
+                                <p>
+                                    QR codes make it easy to share links, Wi‑Fi details, contact cards, and more. With QRResult you can create custom QR codes in seconds—no sign-up required. Choose from URLs, Wi‑Fi, vCards, plain text, and other formats, then customize colors and add your logo for a professional look.
+                                </p>
+                                <p>
+                                    All QR codes generated here are static and never expire. Download high-resolution PNG or SVG files for print or digital use. We’ll add more guides and examples here soon.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
                     <Footer />
                 </main>
             </div>
