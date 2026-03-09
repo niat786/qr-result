@@ -200,6 +200,7 @@ export default function RootLayout({
                 <link rel="manifest" href="/manifest.json" />
                 <meta name="google-site-verification" content="" />
                 <meta name="msvalidate.01" content="" />
+                <meta name="google-site-verification" content="r8HAYyBik82UfkORZWxWw1h0wvDB2SZwqMcfAcYD8-g" />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
