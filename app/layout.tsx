@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     },
     description: 'Generate high-quality, custom QR codes for free. Support for URLs, Wi-Fi, vCards, Text, and more. No registration required. Fast, easy, and secure.',
     applicationName: 'QRResult',
-    authors: [{ name: 'QR Result Team', url: 'https://github.com/niat786' }],
+    authors: [{ name: 'WebWise LLC', url: 'https://github.com/niat786' }],
     keywords: [
         'QR code generator',
         'free QR code',
@@ -92,7 +92,11 @@ const organizationSchema = {
     name: 'QRResult',
     url: 'https://www.qrresult.com',
     logo: 'https://www.qrresult.com/qr-result-site-logo.webp',
-    description: 'Professional QR Code Generator and Dynamic Link Manager',
+    description: 'Professional QR Code Generator and Dynamic Link Manager. A product of WebWise LLC.',
+    parentOrganization: {
+        '@type': 'Organization',
+        name: 'WebWise LLC',
+    },
     sameAs: [
         'https://github.com/niat786/qr-result-new',
     ],

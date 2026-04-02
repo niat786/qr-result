@@ -42,7 +42,7 @@ export default function AboutPage() {
                             <h2 className="text-2xl font-bold text-[#1D1D1F] mb-4" itemProp="headline">Our Story</h2>
                             <div className="space-y-4 text-[#1D1D1F] leading-relaxed text-lg" itemProp="articleBody">
                                 <p>
-                                    QRResult started with a simple frustration. Every QR code tool we found was either full of ads, required a paid account, or added ugly watermarks. We knew there had to be a better way. So we built one.
+                                    QRResult is a product of <strong>WebWise LLC</strong>, a company dedicated to building smart, user-friendly web tools. It started with a simple frustration. Every QR code tool we found was either full of ads, required a paid account, or added ugly watermarks. We knew there had to be a better way. So we built one.
                                 </p>
                                 <p>
                                     Today, QRResult is a trusted <strong>free QR code generator</strong> that supports over <strong>100 QR code types</strong>. From simple URL codes to advanced WiFi sharing, vCard contacts, cryptocurrency wallets, and dynamic trackable links, we cover every use case you can imagine.

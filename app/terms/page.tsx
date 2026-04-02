@@ -76,7 +76,7 @@ export default function TermsPage() {
                     <section className="space-y-4">
                         <h2 className="text-xl font-semibold text-[#1D1D1F]">4. Intellectual Property</h2>
                         <p className="text-[#1D1D1F] leading-relaxed">
-                            The QRResult website, including its design, code, logos, and original content, is the intellectual property of QRResult and its contributors. Our source code is available under an open-source license on <a href="https://github.com/niat786/qr-result-new" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">GitHub</a>.
+                            The QRResult website, including its design, code, logos, and original content, is the intellectual property of <strong>WebWise LLC</strong> and its contributors. Our source code is available under an open-source license on <a href="https://github.com/niat786/qr-result-new" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">GitHub</a>.
                         </p>
                         <p className="text-[#1D1D1F] leading-relaxed">
                             <strong>QR codes you create belong to you.</strong> Once you generate and download a QR code using our tool, you own full rights to that QR code. You may use it for personal, commercial, or educational purposes without attribution. However, you may not claim ownership of the QRResult platform itself or redistribute our tool as your own product.
