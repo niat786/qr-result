@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Home, Sparkles } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface HeaderProps {
     title: string;
@@ -55,7 +56,7 @@ export function Header({
                         </div>
                     ) : (
                         <Link href="/" className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 overflow-hidden hover:opacity-90 transition-opacity" aria-label="QRResult home">
-                            <img src="/qr-result-site-logo.webp" alt="" className="w-full h-full object-contain" width={36} height={36} />
+                            <Image src="/qr-result-site-logo.webp" alt="QRResult — Free QR Code Generator" className="object-contain" width={36} height={36} priority />
                         </Link>
                     )}
 

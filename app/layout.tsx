@@ -227,6 +227,7 @@ export default function RootLayout({
                 />
             </head>
             <body suppressHydrationWarning itemScope itemType="https://schema.org/WebPage">
+                <a href="#main-content" className="skip-to-content">Skip to main content</a>
                 {children}
             </body>
         </html>

@@ -6,12 +6,13 @@ import { Footer } from '../components/Footer';
 import { Sidebar } from '../components/Sidebar';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export default function TermsPage() {
     const router = useRouter();
 
     return (
-        <main className="min-h-screen text-[#1D1D1F] font-sans selection:bg-[#007AFF]/20 selection:text-[#007AFF] bg-[#F5F5F7]">
+        <main id="main-content" className="min-h-screen text-[#1D1D1F] font-sans selection:bg-[#007AFF]/20 selection:text-[#007AFF] bg-[#F5F5F7]">
             <Header
                 title="Terms of Service"
                 mobileMenu={
@@ -21,6 +22,8 @@ export default function TermsPage() {
                     />
                 }
             />
+
+            <Breadcrumb items={[{ label: 'Terms of Service' }]} />
 
             <div className="max-w-4xl mx-auto p-6 lg:p-12 pb-20">
                 <article className="card-pro p-10 space-y-8" itemScope itemType="https://schema.org/WebPage">

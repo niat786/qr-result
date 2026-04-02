@@ -7,12 +7,13 @@ import { Sidebar } from '../components/Sidebar';
 import { useRouter } from 'next/navigation';
 import { CheckCircle2, Users, Shield, Zap, Globe, Award, Heart } from 'lucide-react';
 import Link from 'next/link';
+import { Breadcrumb } from '../components/Breadcrumb';
 
 export default function AboutPage() {
     const router = useRouter();
 
     return (
-        <main className="min-h-screen text-[#1D1D1F] font-sans selection:bg-[#007AFF]/20 selection:text-[#007AFF] bg-[#F5F5F7]">
+        <main id="main-content" className="min-h-screen text-[#1D1D1F] font-sans selection:bg-[#007AFF]/20 selection:text-[#007AFF] bg-[#F5F5F7]">
             <Header
                 title="About Us"
                 mobileMenu={
@@ -22,6 +23,8 @@ export default function AboutPage() {
                     />
                 }
             />
+
+            <Breadcrumb items={[{ label: 'About Us' }]} />
 
             <div className="max-w-4xl mx-auto p-6 lg:p-12 pb-20">
                 <article itemScope itemType="https://schema.org/AboutPage">
