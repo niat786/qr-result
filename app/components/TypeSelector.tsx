@@ -15,14 +15,16 @@ export function TypeSelector({ activeCategory, activeTypeId, onSelectType }: Typ
             {types.map((type) => (
                 <button
                     key={type.id}
-                    onClick={() => onSelectType(type.id, {})} // Reset inputs on type switch
+                    onClick={() => onSelectType(type.id, {})}
                     className={`flex flex-col items-center justify-center p-2 rounded-xl gap-1.5 transition-all duration-200 border ${activeTypeId === type.id
                             ? 'bg-white border-[#007AFF]/20 text-[#007AFF] shadow-md shadow-blue-500/10 ring-1 ring-[#007AFF]/20'
-                            : 'bg-white border-transparent text-[#86868B] hover:text-[#1D1D1F] hover:shadow-sm'
+                            : 'bg-white border-transparent text-[#6E6E73] hover:text-[#1D1D1F] hover:shadow-sm'
                         }`}
+                    aria-label={`Create ${type.label} QR code`}
+                    aria-pressed={activeTypeId === type.id}
                 >
-                    <type.icon size={18} />
-                    <span className="text-[10px] sm:text-xs font-medium text-center leading-tight">
+                    <type.icon size={18} aria-hidden="true" />
+                    <span className="text-[11px] sm:text-xs font-medium text-center leading-tight">
                         {type.label}
                     </span>
                 </button>

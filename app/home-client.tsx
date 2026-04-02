@@ -895,7 +895,7 @@ function HomeContent() {
 
 export default function HomeClient() {
     return (
-        <main className="min-h-screen text-[#1D1D1F] overflow-hidden font-sans selection:bg-[#007AFF]/20 selection:text-[#007AFF]">
+        <main id="main-content" className="min-h-screen text-[#1D1D1F] overflow-hidden font-sans selection:bg-[#007AFF]/20 selection:text-[#007AFF]">
             <Suspense fallback={
                 <div className="flex h-screen items-center justify-center" role="status" aria-label="Loading">
                     <Loader2 className="animate-spin text-[#007AFF]" size={32} aria-hidden="true" />

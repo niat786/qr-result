@@ -3,11 +3,14 @@
 import React from 'react';
 import { Github, Twitter, Mail, Heart, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import { BackToTop } from './BackToTop';
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
+        <>
+        <BackToTop />
         <footer className="mt-20 border-t border-black/5 bg-[#F5F5F7]/50">
             <div className="max-w-6xl mx-auto px-4 md:px-6 py-12">
                 {/* Main Footer Content */}
@@ -127,5 +130,6 @@ export function Footer() {
                 </div>
             </div>
         </footer>
+        </>
     );
 }
