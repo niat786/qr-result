@@ -35,7 +35,7 @@ export default function PrivacyPage() {
                     <section className="space-y-4">
                         <h2 className="text-xl font-semibold text-[#1D1D1F]">1. Introduction</h2>
                         <p className="text-[#1D1D1F] leading-relaxed">
-                            Welcome to QRResult. Your privacy is important to us. This Privacy Policy explains how we collect, use, protect, and handle your personal information when you visit <strong>qrresult.com</strong> and use our free QR code generator.
+                            Welcome to QRResult, a product of <strong>WebWise LLC</strong>. Your privacy is important to us. This Privacy Policy explains how we collect, use, protect, and handle your personal information when you visit <strong>qrresult.com</strong> and use our free QR code generator.
                         </p>
                         <p className="text-[#1D1D1F] leading-relaxed">
                             We are committed to transparency. We follow the data protection principles outlined by the <a href="https://commission.europa.eu/law/law-topic/data-protection_en" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">European Commission&apos;s GDPR framework</a> and respect the privacy guidelines recommended by the <a href="https://www.eff.org/issues/privacy" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">Electronic Frontier Foundation (EFF)</a>. By using our website, you agree to the practices described in this policy.

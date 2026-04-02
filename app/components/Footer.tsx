@@ -108,7 +108,8 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-xs text-[#86868B] flex items-center gap-1">
-                        &copy; {currentYear} QRResult. Made with <Heart size={12} className="text-[#FF3B30] fill-[#FF3B30]" /> by{' '}
+                        &copy; {currentYear} QRResult. A product of{' '}
+                        <span className="font-medium">WebWise LLC</span>. Made with <Heart size={12} className="text-[#FF3B30] fill-[#FF3B30]" /> by{' '}
                         <a
                             href="https://github.com/niat786"
                             target="_blank"
