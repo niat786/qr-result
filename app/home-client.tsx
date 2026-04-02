@@ -537,26 +537,353 @@ function HomeContent() {
                         </aside>
                     </div>
 
-                    {/* Sample article section – content can be updated later */}
-                    <article className="max-w-6xl mx-auto py-16 border-t border-black/5">
+                    {/* SEO Content Section */}
+                    <article className="max-w-6xl mx-auto py-16 border-t border-black/5 space-y-12" itemScope itemType="https://schema.org/Article">
+                        {/* Main Intro */}
                         <div className="card-glossy p-8 md:p-10">
                             <header className="mb-8 relative z-10">
-                                <h2 className="text-2xl font-bold text-[#1D1D1F] mb-2">
-                                    Why Use a Free QR Code Generator?
+                                <h2 className="text-2xl font-bold text-[#1D1D1F] mb-2" itemProp="headline">
+                                    Free QR Code Generator — Create Custom QR Codes Instantly
                                 </h2>
                                 <p className="text-[#86868B] text-sm">
-                                    Quick tips and ideas for using QR codes in your projects.
+                                    The complete guide to generating professional QR codes for every purpose.
                                 </p>
                             </header>
-                            <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4 relative z-10">
+                            <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4 relative z-10" itemProp="articleBody">
                                 <p>
-                                    QR codes make it easy to share links, Wi‑Fi details, contact cards, and more. With QRResult you can create custom QR codes in seconds—no sign-up required. Choose from URLs, Wi‑Fi, vCards, plain text, and other formats, then customize colors and add your logo for a professional look.
+                                    QR codes have transformed the way we share information. According to <a href="https://www.statista.com/topics/1145/internet-usage-worldwide/" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">Statista</a>, over 89 million smartphone users in the United States alone scanned a QR code in 2022. That number continues to grow every year. Businesses, educators, healthcare providers, and everyday people rely on QR codes to connect the physical and digital worlds.
                                 </p>
                                 <p>
-                                    All QR codes generated here are static and never expire. Download high-resolution PNG or SVG files for print or digital use. We’ll add more guides and examples here soon.
+                                    <strong>QRResult is a free QR code generator</strong> that lets you create beautiful, high-quality QR codes in seconds. You do not need to sign up, pay a subscription, or install any software. Everything happens right here in your browser. Simply choose your QR code type, enter your content, customize the design, and download. It really is that easy.
+                                </p>
+                                <p>
+                                    We support over <strong>80 QR code types</strong> across <strong>18 categories</strong>. From website URLs and WiFi passwords to cryptocurrency wallets and medical information, QRResult handles it all. Every code you generate is fully customizable with your brand colors, logo, and preferred export format. Download in crisp PNG (up to 4096px) or scalable SVG for professional print use.
                                 </p>
                             </div>
                         </div>
+
+                        {/* Web & Links */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Web & Links — Turn Any URL Into a Scannable Code</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        The most popular use of QR codes is sharing website links. With QRResult, you can create QR codes for standard URLs, shortened links, deep links, affiliate URLs, tracking URLs, and UTM campaign links. Marketers love our UTM Campaign builder because it lets you add source, medium, and campaign parameters directly — perfect for tracking performance in <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">Google Analytics</a>.
+                                    </p>
+                                    <p>
+                                        Need a multi-URL QR code? Link to your Linktree, bio page, or custom landing page. Every link you encode generates a permanent, scannable code that never expires.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Social Media */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Social Media — Share Your Profiles With a Single Scan</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Growing your social media presence starts with making it easy for people to find you. QRResult supports QR codes for <strong>Facebook, Instagram, Twitter, LinkedIn, YouTube, TikTok, GitHub, Reddit, Snapchat, Pinterest, Spotify, and Twitch</strong>. Place these codes on business cards, event banners, product packaging, or store windows.
+                                    </p>
+                                    <p>
+                                        Instead of spelling out long usernames, let people scan and follow you instantly. According to <a href="https://datareportal.com/global-digital-overview" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">DataReportal</a>, there are over 5 billion social media users worldwide. QR codes are one of the fastest ways to convert offline interactions into online followers.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Communication */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Communication — Connect Through Every Channel</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        QRResult makes it effortless to create QR codes for direct communication. Generate codes for <strong>SMS, phone calls, email, WhatsApp, Telegram, Discord, Slack, Signal, WeChat, Viber, LINE, and Skype</strong>. When someone scans your code, their device opens the right app with your contact details pre-filled.
+                                    </p>
+                                    <p>
+                                        This is incredibly useful for customer support teams, event organizers, and small businesses. A WhatsApp QR code on your storefront window lets customers message you directly. An email QR code on a flyer pre-fills the subject line and recipient. These small touches save time and reduce friction.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Network */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Network — Share WiFi, Bluetooth, and VPN Settings</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Stop dictating complicated WiFi passwords to your guests. Our <strong>WiFi QR code generator</strong> creates scannable codes that connect devices automatically. It supports WPA, WPA2, WEP, and open networks. Guests simply scan the code with their phone camera and connect instantly.
+                                    </p>
+                                    <p>
+                                        Beyond WiFi, QRResult also supports Bluetooth device pairing, VPN configuration sharing, and Ethernet connection details. Hotels, restaurants, co-working spaces, and offices use network QR codes daily. The <a href="https://www.wi-fi.org/" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">Wi-Fi Alliance</a> confirms that QR-based WiFi sharing is now a standard feature across all major smartphone platforms.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Identity / Contact */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Identity — Digital Business Cards and vCards</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Paper business cards get lost. Digital ones do not. QRResult generates <strong>vCard QR codes</strong> that save your name, phone number, email, and company directly to someone&apos;s contacts with a single scan. We also support Business Card URLs, Digital Resumes, and MeCard format for broader device compatibility.
+                                    </p>
+                                    <p>
+                                        Networking at conferences, trade shows, and meetups becomes seamless. Share your professional details without handing over a physical card. The <a href="https://datatracker.ietf.org/doc/html/rfc6350" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">vCard standard (RFC 6350)</a> is supported by every major smartphone and email client worldwide.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Payments */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Payments — Accept Money With QR Codes</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        QR codes have revolutionized digital payments globally. QRResult supports <strong>UPI, PayPal, Stripe, SEPA bank transfers, Venmo, Cash App, Zelle, Alipay, and WeChat Pay</strong>. Create payment QR codes that let customers pay you directly from their phone.
+                                    </p>
+                                    <p>
+                                        Small businesses, freelancers, and street vendors use payment QR codes to accept contactless payments without expensive hardware. The <a href="https://www.worldbank.org/en/topic/financialinclusion" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">World Bank</a> reports that QR-based payments are driving financial inclusion in developing economies worldwide.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Crypto */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Cryptocurrency — Share Wallet Addresses Safely</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Cryptocurrency addresses are long and error-prone to type manually. QRResult generates QR codes for <strong>Bitcoin, Ethereum, USDT, BNB, Solana, Dogecoin, Litecoin, Cardano, and Polygon</strong> wallet addresses. Scanning eliminates typos and ensures funds reach the right destination.
+                                    </p>
+                                    <p>
+                                        You can also include a specific payment amount in the QR code for Bitcoin transactions. This is essential for merchants accepting crypto payments. The <a href="https://bitcoin.org/en/" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">Bitcoin.org</a> protocol natively supports QR code encoding for wallet addresses and payment requests.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Files */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Files — Link to Documents, Images, Videos, and More</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Need to share a file quickly? QRResult creates QR codes for <strong>plain text, PDF links, image URLs, video links, audio files, cloud storage links, and documents</strong>. Point your QR code to any publicly accessible file and let people access it with a scan.
+                                    </p>
+                                    <p>
+                                        This is perfect for sharing restaurant menus, event brochures, instruction manuals, training videos, and product catalogs. Link to files on Google Drive, Dropbox, OneDrive, or your own server. The QR code becomes a bridge between printed materials and digital content.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Location */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Location — Guide People to the Right Place</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Location QR codes open map applications directly with your address or coordinates. QRResult supports <strong>Google Maps, Apple Maps, geographic coordinates (lat/long), and Waze</strong>. Place these codes on event invitations, business cards, flyers, or delivery instructions.
+                                    </p>
+                                    <p>
+                                        Your guests never have to search for directions manually. A single scan opens turn-by-turn navigation to your exact location. This is especially valuable for event venues, wedding invitations, retail stores, and real estate open houses.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Events */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Events — Calendar Invites and Meeting Links</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        QRResult generates <strong>calendar event QR codes</strong> that add events directly to a person&apos;s calendar app. Set the title, start date, and end date. We also support direct meeting links for <strong>Zoom, Google Meet, Microsoft Teams, and Cisco Webex</strong>.
+                                    </p>
+                                    <p>
+                                        Conference organizers print QR codes on session schedules so attendees can save talks to their calendars. Teachers share class meeting links via QR codes posted in classrooms. It eliminates the hassle of copying long URLs and manual calendar entries.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Apps */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Apps — Drive Downloads From Every Store</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Promote your mobile app with QR codes that link directly to the <strong>Apple App Store, Google Play Store, and Huawei AppGallery</strong>. Users scan the code and land on your app listing, ready to download. No searching required.
+                                    </p>
+                                    <p>
+                                        App developers and marketers place these codes on websites, printed ads, product packaging, and email signatures. According to <a href="https://www.data.ai/" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">data.ai</a>, reducing friction in the app discovery process significantly increases download conversion rates.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Marketing */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Marketing — Track Campaigns and Boost Engagement</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        QRResult is built for marketers. Our Web & Links category includes <strong>UTM campaign builders, tracking URLs, affiliate links, and short links</strong>. Combined with our <strong>dynamic QR code</strong> feature, you can change the destination URL after printing and track scan analytics in real time.
+                                    </p>
+                                    <p>
+                                        Dynamic QR codes are a game-changer for marketing campaigns. Print a QR code on thousands of flyers, then update where it points without reprinting anything. Monitor how many people scan it, when they scan, and optimize your campaigns based on real data.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Security */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Security — Two-Factor Authentication and Secure Sharing</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Security-conscious users rely on QRResult for <strong>2FA/OTP setup codes, password-protected content, and WiFi password sharing</strong>. Our 2FA QR code generator creates TOTP-compatible codes that work with authenticator apps like Google Authenticator and Authy.
+                                    </p>
+                                    <p>
+                                        The <a href="https://owasp.org/www-community/controls/Multi-Factor_Authentication" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">OWASP Foundation</a> recommends two-factor authentication as a critical security measure. QRResult makes it simple to generate setup codes for your applications and services.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Gaming */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Gaming — Connect With Fellow Gamers</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Share your gaming profiles effortlessly. QRResult generates QR codes for <strong>Steam, Xbox, PlayStation, Epic Games, Roblox, and Minecraft server connections</strong>. Friends can scan your code to add you instantly instead of typing long gamertags or server IPs.
+                                    </p>
+                                    <p>
+                                        Minecraft server owners can share connection details with a single code. Esports teams use QR codes on their merchandise and social media to grow their community. Gaming QR codes make connecting fast and fun.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Health */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Health — Medical Information at Your Fingertips</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        QR codes save lives by making critical health information instantly accessible. QRResult supports <strong>medication information, health record links, emergency contacts, and allergy information</strong>. Encode your medication name, dosage, and instructions into a scannable code that healthcare providers can read quickly.
+                                    </p>
+                                    <p>
+                                        Emergency contact QR codes are especially valuable for people with medical conditions, elderly individuals, and children. The <a href="https://www.who.int/health-topics/digital-health" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">World Health Organization</a> supports the use of digital health tools to improve patient care and safety outcomes.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Education */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Education — Streamline Learning and Resources</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Educators around the world use QR codes to enhance the classroom experience. QRResult creates codes for <strong>course links, textbook ISBNs, classroom codes, library resources, and certificates</strong>. Students scan a code and land directly on the learning material they need.
+                                    </p>
+                                    <p>
+                                        Teachers place QR codes on worksheets to link to supplementary videos. Universities embed them in campus maps to guide new students. Libraries use ISBN QR codes for quick catalog lookups. According to the <a href="https://www.ed.gov/technology" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">U.S. Department of Education</a>, technology integration in classrooms improves student engagement and learning outcomes.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Business */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Business — Invoices, Products, Reviews, and More</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        QRResult powers everyday business operations. Create QR codes for <strong>invoices, receipts, product pages, store locations, customer review links, and loyalty programs</strong>. A QR code on a receipt can link to a feedback form. A code on product packaging can open detailed specifications or warranty registration.
+                                    </p>
+                                    <p>
+                                        Loyalty program QR codes let customers collect points with a simple scan. Review link codes encourage satisfied customers to leave positive feedback on Google, Yelp, or Trustpilot. These small improvements add up to meaningful business growth.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Entertainment */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Entertainment — Movies, Music, Podcasts, and Books</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Share your favorite content with the world. QRResult generates QR codes for <strong>movies, TV shows, podcasts, music albums, concert tickets, and books</strong>. Content creators use these codes to promote their work across physical and digital channels.
+                                    </p>
+                                    <p>
+                                        A podcast host can print a QR code on promotional stickers that links directly to their show. An author can add a QR code inside their book that leads to bonus content. A band can put a code on their poster that opens ticket sales. The possibilities are endless.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Why QRResult */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Why Choose QRResult Over Other QR Code Generators?</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Most QR code generators are cluttered with ads, require paid accounts for basic features, or add watermarks to your downloads. <strong>QRResult is different.</strong> Here is what makes us the preferred choice:
+                                    </p>
+                                    <ul className="list-disc pl-5 space-y-2">
+                                        <li><strong>Completely free</strong> — No hidden fees, no premium tiers for basic QR codes</li>
+                                        <li><strong>No sign-up required</strong> — Start creating QR codes immediately</li>
+                                        <li><strong>No watermarks</strong> — Every download is clean and professional</li>
+                                        <li><strong>Privacy-first</strong> — Static codes are generated entirely in your browser. Your data never leaves your device</li>
+                                        <li><strong>80+ QR code types</strong> — The widest selection of QR formats available for free</li>
+                                        <li><strong>Full customization</strong> — Colors, gradients, logos, error correction, border radius, and shadows</li>
+                                        <li><strong>High-resolution exports</strong> — PNG up to 4096px and scalable SVG for print</li>
+                                        <li><strong>Dynamic QR codes</strong> — Change destinations after printing and track scans with analytics</li>
+                                        <li><strong>Open source</strong> — Our entire codebase is available on <a href="https://github.com/niat786/qr-result-new" target="_blank" rel="noopener noreferrer" className="text-[#007AFF] hover:underline">GitHub</a> for full transparency</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* How It Works */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">How to Create a QR Code in 3 Simple Steps</h3>
+                                <div className="prose prose-neutral max-w-none text-[#1D1D1F] space-y-4">
+                                    <p>
+                                        Creating a QR code with QRResult takes less than 30 seconds. Follow these three simple steps:
+                                    </p>
+                                    <ol className="list-decimal pl-5 space-y-3">
+                                        <li><strong>Choose your QR code type.</strong> Browse our 18 categories in the sidebar and select the format that matches your needs — URL, WiFi, vCard, payment, social media, and many more.</li>
+                                        <li><strong>Enter your content and customize.</strong> Fill in the required fields, then personalize your QR code with custom colors, your brand logo, gradient effects, and your preferred error correction level.</li>
+                                        <li><strong>Download and share.</strong> Preview your QR code in real time, then download it as a high-resolution PNG or SVG file. Print it, share it digitally, or embed it on your website.</li>
+                                    </ol>
+                                    <p>
+                                        That is all it takes. No account creation, no payment, no waiting. Your QR code is ready to use the moment you download it.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Closing CTA */}
+                        <section className="card-glossy p-8 md:p-10">
+                            <div className="relative z-10 text-center">
+                                <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">Start Creating Your QR Codes Today</h3>
+                                <p className="text-[#86868B] max-w-2xl mx-auto mb-2">
+                                    QRResult is trusted by thousands of users worldwide. Whether you need a single QR code for your WiFi password or hundreds of codes for a marketing campaign, we have you covered. Scroll up to the generator, pick your category, and create your first QR code right now — completely free.
+                                </p>
+                            </div>
+                        </section>
                     </article>
 
                     <Footer />
