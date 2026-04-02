@@ -97,16 +97,9 @@ export function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
-                                    className="text-sm text-[#86868B] hover:text-[#007AFF] transition-colors"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        alert('Cookie preferences coming soon!');
-                                    }}
-                                >
+                                <Link href="/cookies" className="text-sm text-[#86868B] hover:text-[#007AFF] transition-colors">
                                     Cookie Policy
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
