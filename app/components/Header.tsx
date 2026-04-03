@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, Sparkles } from 'lucide-react';
+import { Menu, X, Home, Info, Mail, Shield } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -15,6 +15,12 @@ interface HeaderProps {
     iconGradient?: string;
     mobileMenu?: React.ReactNode | ((close: () => void) => React.ReactNode);
 }
+
+const navLinks = [
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
+    { href: '/privacy', label: 'Privacy' },
+];
 
 export function Header({
     title,
@@ -32,7 +38,6 @@ export function Header({
         setIsMenuOpen(false);
     }, [pathname]);
 
-    // Close menu function
     const closeMenu = () => setIsMenuOpen(false);
 
     // Prevent body scroll when menu is open
@@ -62,9 +67,9 @@ export function Header({
 
                     {/* Title */}
                     <div className="flex items-center gap-2 min-w-0 flex-1">
-                        <h1 className="text-lg md:text-xl font-semibold tracking-tight text-[#1D1D1F] truncate">
+                        <Link href="/" className="text-lg md:text-xl font-semibold tracking-tight text-[#1D1D1F] truncate hover:text-[#007AFF] transition-colors">
                             {title}
-                        </h1>
+                        </Link>
                         {badge && (
                             <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider uppercase shrink-0 ${badgeColor}`}>
                                 {badge}
@@ -74,30 +79,21 @@ export function Header({
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center gap-1">
-                    <Link
-                        href="/"
-                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                            pathname === '/' 
-                                ? 'text-[#007AFF] bg-[#007AFF]/10' 
-                                : 'text-[#86868B] hover:text-[#1D1D1F] hover:bg-black/5'
-                        }`}
-                    >
-                        Generator
-                    </Link>
-                    {/* Dynamic – commented for now
-                    <Link
-                        href="/dynamic"
-                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                            pathname === '/dynamic' 
-                                ? 'text-[#FF9500] bg-[#FF9500]/10' 
-                                : 'text-[#86868B] hover:text-[#1D1D1F] hover:bg-black/5'
-                        }`}
-                    >
-                        Dynamic
-                    </Link>
-                    */}
-                </div>
+                <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                                pathname === link.href
+                                    ? 'text-[#007AFF] bg-[#007AFF]/10'
+                                    : 'text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/5'
+                            }`}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </nav>
 
                 {/* Mobile Menu Toggle */}
                 {mobileMenu && (
@@ -105,7 +101,8 @@ export function Header({
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="p-2 text-[#1D1D1F] hover:bg-black/5 rounded-lg transition-colors relative z-50"
-                            aria-label="Toggle menu"
+                            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                            aria-expanded={isMenuOpen}
                         >
                             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
@@ -132,9 +129,10 @@ export function Header({
                     >
                         <div className="h-full overflow-y-auto scrollbar-clean">
                             <div className="p-4">
-                                {/* Quick Links */}
+                                {/* Page Links */}
                                 <div className="mb-6 pb-6 border-b border-black/5">
-                                    <div className="flex flex-col gap-2">
+                                    <p className="text-[11px] font-semibold text-[#6E6E73] uppercase tracking-wider px-4 mb-2">Pages</p>
+                                    <div className="flex flex-col gap-1">
                                         <Link
                                             href="/"
                                             onClick={closeMenu}
@@ -144,30 +142,57 @@ export function Header({
                                                     : 'text-[#1D1D1F] hover:bg-black/5'
                                             }`}
                                         >
-                                            <Home size={18} />
-                                            Static Generator
+                                            <Home size={18} aria-hidden="true" />
+                                            Generator
                                         </Link>
-                                        {/* Dynamic – commented for now
                                         <Link
-                                            href="/dynamic"
+                                            href="/about"
                                             onClick={closeMenu}
                                             className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                                                pathname === '/dynamic'
-                                                    ? 'bg-[#FF9500]/10 text-[#FF9500]'
+                                                pathname === '/about'
+                                                    ? 'bg-[#007AFF]/10 text-[#007AFF]'
                                                     : 'text-[#1D1D1F] hover:bg-black/5'
                                             }`}
                                         >
-                                            <Sparkles size={18} />
-                                            Dynamic Manager
+                                            <Info size={18} aria-hidden="true" />
+                                            About Us
                                         </Link>
-                                        */}
+                                        <Link
+                                            href="/contact"
+                                            onClick={closeMenu}
+                                            className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                                                pathname === '/contact'
+                                                    ? 'bg-[#007AFF]/10 text-[#007AFF]'
+                                                    : 'text-[#1D1D1F] hover:bg-black/5'
+                                            }`}
+                                        >
+                                            <Mail size={18} aria-hidden="true" />
+                                            Contact
+                                        </Link>
+                                        <Link
+                                            href="/privacy"
+                                            onClick={closeMenu}
+                                            className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                                                pathname === '/privacy'
+                                                    ? 'bg-[#007AFF]/10 text-[#007AFF]'
+                                                    : 'text-[#1D1D1F] hover:bg-black/5'
+                                            }`}
+                                        >
+                                            <Shield size={18} aria-hidden="true" />
+                                            Privacy
+                                        </Link>
                                     </div>
                                 </div>
 
-                                {/* Menu Content */}
-                                <div className="px-2">
-                                    {typeof mobileMenu === 'function' ? mobileMenu(closeMenu) : mobileMenu}
-                                </div>
+                                {/* Categories (if sidebar provided) */}
+                                {mobileMenu && (
+                                    <div>
+                                        <p className="text-[11px] font-semibold text-[#6E6E73] uppercase tracking-wider px-4 mb-2">QR Categories</p>
+                                        <div className="px-2">
+                                            {typeof mobileMenu === 'function' ? mobileMenu(closeMenu) : mobileMenu}
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
